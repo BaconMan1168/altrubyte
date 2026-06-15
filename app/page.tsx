@@ -112,9 +112,9 @@ function Hero() {
           <div className="rounded-[1.4rem] bg-[color:var(--surface)]/68 p-2 shadow-[0_16px_60px_var(--shadow)]">
             <MotionAnchor
               href={hostWorkshopUrl}
-              className="arrow-reveal-button group inline-flex w-fit items-center justify-center overflow-hidden rounded-full bg-[color:var(--accent)] px-6 py-3 text-sm font-bold text-white shadow-[0_18px_50px_var(--ring)]"
+              className="arrow-reveal-button group inline-flex h-16 w-full items-center justify-center overflow-hidden rounded-full border border-transparent bg-[color:var(--accent)] px-6 text-sm font-bold text-white shadow-[0_18px_50px_var(--ring)]"
             >
-              Request a workshop
+              <span className="button-label">Request a workshop</span>
               <span className="arrow-chip grid h-8 shrink-0 place-items-center overflow-hidden rounded-full bg-white/18">
                 ↗
               </span>
@@ -126,7 +126,7 @@ function Hero() {
           <div className="rounded-[1.4rem] bg-[color:var(--surface)]/68 p-2 shadow-[0_16px_60px_var(--shadow)]">
             <MotionAnchor
               href={joinWorkshopUrl}
-              className="center-fill-button inline-flex w-full items-center justify-center rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/76 px-5 py-3 text-sm font-bold text-[color:var(--text)]"
+              className="center-fill-button inline-flex h-16 w-full items-center justify-center rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/76 px-5 text-sm font-bold text-[color:var(--text)]"
             >
               Join a public workshop
             </MotionAnchor>
