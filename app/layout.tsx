@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Altrubyte | AI-assisted coding workshops for mission-driven teams",
   description:
     "Altrubyte hosts free online workshops that help nonprofits, schools, clubs, and youth organizations turn manual workflows into useful AI-assisted tools.",
+  keywords: [
+    "AI-assisted coding workshops",
+    "AI coding workshops for nonprofits",
+    "workflow automation training",
+    "coding agent workshop",
+    "AI workshops for schools",
+    "student coding workshops",
+    "nonprofit automation tools",
+  ],
   metadataBase: new URL("https://altrubyte.org"),
   openGraph: {
     title: "Altrubyte",

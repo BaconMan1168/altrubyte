@@ -38,6 +38,37 @@ const projectExamples = [
   "Shared inbox triage tool",
 ];
 
+const workshopPaths = [
+  {
+    title: "AI-Assisted Building 101",
+    bestFor: "Public sessions, schools, first-time groups, mixed experience levels",
+    goal: "Teach core concepts and show what AI coding agents can do through a live demo.",
+    output: "Participants understand the method and leave with one workflow idea or prompt.",
+    length: "45, 60, or 90 min",
+  },
+  {
+    title: "Workflow Mapping + Automation Strategy",
+    bestFor: "Nonprofits, clubs, operational teams, staff groups",
+    goal: "Identify repetitive workflows and decide what is worth automating.",
+    output: "Prioritized workflow map plus recommended AI tool ideas.",
+    length: "45, 60, or 90 min",
+  },
+  {
+    title: "Focused Tool Demo / Use-Case Walkthrough",
+    bestFor: "Organizations with one specific workflow, tool idea, or problem area",
+    goal: "Walk through how that specific workflow could become a small AI-assisted tool.",
+    output: "Shared prototype, build plan, or implementation direction for that use case.",
+    length: "45, 60, or 90 min",
+  },
+  {
+    title: "Hands-On Build Lab",
+    bestFor: "Coding clubs, student groups, technical volunteers, teams that want practice",
+    goal: "Participants use AI agents during the session to build or adapt a small tool.",
+    output: "Individual or small-group prototype, prompt plan, or working draft.",
+    length: "60 or 90 min recommended",
+  },
+];
+
 const audiences = ["NGOs", "Nonprofits", "Schools", "Clubs", "Youth organizations"];
 
 export default function Home() {
@@ -48,6 +79,7 @@ export default function Home() {
       <Hero />
       <WorkshopFormat />
       <WhatWeTeach />
+      <WorkshopPaths />
       <ProjectExamples />
       <WhoItsFor />
       <EarlyProof />
@@ -66,6 +98,9 @@ function Navigation() {
         <div className="hidden items-center justify-center gap-7 text-sm text-[color:var(--muted)] lg:flex">
           <a className="transition hover:text-[color:var(--text)]" href="#format">
             Format
+          </a>
+          <a className="transition hover:text-[color:var(--text)]" href="#workshops">
+            Workshops
           </a>
           <a className="transition hover:text-[color:var(--text)]" href="#projects">
             Projects
@@ -211,6 +246,111 @@ function WhatWeTeach() {
             <p className="mt-3 leading-7 text-[color:var(--muted)]">{point.body}</p>
           </Reveal>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function WorkshopPaths() {
+  return (
+    <section id="workshops" className="px-4 py-20 md:px-8 md:py-32">
+      <div className="mx-auto max-w-7xl">
+        <Reveal className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+          <div>
+            <p className="mb-5 inline-flex rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--accent-strong)]">
+              Workshop paths
+            </p>
+            <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              Pick the AI workshop format around the work in front of you.
+            </h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
+            Altrubyte workshops help nonprofits, schools, clubs, and youth organizations
+            learn AI-assisted coding, workflow automation, prompt design, and responsible
+            coding-agent review through practical sessions.
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid gap-4 md:grid-cols-12 md:gap-5">
+          {workshopPaths.map((path, index) => (
+            <Reveal
+              key={path.title}
+              delay={index * 0.05}
+              className={[
+                "group",
+                index % 2 === 0 ? "md:col-span-7" : "md:col-span-5",
+              ].join(" ")}
+            >
+              <article className="h-full rounded-[2rem] border border-[color:var(--ring)] bg-[color:var(--surface)]/68 p-2 shadow-[0_24px_90px_var(--shadow)] transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
+                <div className="grid h-full gap-5 rounded-[calc(2rem-0.5rem)] bg-[color:var(--surface-muted)] p-5 md:grid-cols-[auto_1fr] md:p-6">
+                  <div className="flex md:block">
+                    <span className="grid h-12 w-12 place-items-center rounded-full bg-[color:var(--text)] font-mono text-sm font-semibold text-[color:var(--surface)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <h3 className="max-w-xl text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
+                        {path.title}
+                      </h3>
+                      <span className="rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)] px-3 py-2 text-xs font-semibold text-[color:var(--accent-strong)]">
+                        {path.length}
+                      </span>
+                    </div>
+                    <dl className="mt-8 grid gap-5 sm:grid-cols-3">
+                      <div>
+                        <dt className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--accent-strong)]">
+                          Best for
+                        </dt>
+                        <dd className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
+                          {path.bestFor}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--accent-strong)]">
+                          Goal
+                        </dt>
+                        <dd className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
+                          {path.goal}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--accent-strong)]">
+                          Output
+                        </dt>
+                        <dd className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
+                          {path.output}
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.18} className="mt-6">
+          <div className="rounded-[2rem] bg-[color:var(--text)] p-2 text-[color:var(--surface)] shadow-[0_24px_90px_var(--shadow)]">
+            <div className="grid gap-5 rounded-[calc(2rem-0.5rem)] border border-white/10 p-5 md:grid-cols-[1fr_auto] md:items-center md:p-6">
+              <p className="max-w-3xl text-base leading-7 text-[color:var(--surface-muted)]">
+                Not sure which format fits? Request a workshop and choose
+                <span className="font-semibold text-white"> Not sure / help me choose</span>.
+                The session can be shaped around a training goal, a manual workflow, or one
+                tool idea.
+              </p>
+              <MotionAnchor
+                href={hostWorkshopUrl}
+                className="arrow-reveal-button group inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-[color:var(--accent)] px-6 text-sm font-bold text-white"
+              >
+                <span className="button-label">Request a workshop</span>
+                <span className="arrow-chip grid h-8 shrink-0 place-items-center overflow-hidden rounded-full bg-white/18">
+                  ↗
+                </span>
+              </MotionAnchor>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
