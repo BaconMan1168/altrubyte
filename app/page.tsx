@@ -5,7 +5,7 @@ const hostWorkshopUrl = "#replace-with-host-workshop-google-form";
 const joinWorkshopUrl = "#replace-with-join-workshop-google-form";
 
 const workshopFormat = [
-  "Free for organizations",
+  "Free sessions",
   "Online by default",
   "45-90 minutes",
   "Beginner-friendly",
@@ -76,9 +76,15 @@ function Navigation() {
         </div>
         <a
           href={hostWorkshopUrl}
-          className="rounded-full bg-[color:var(--text)] px-4 py-2 text-sm font-semibold text-[color:var(--surface)] transition hover:bg-[color:var(--accent-strong)]"
+          className="center-fill-button rounded-full border border-transparent bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--text)] shadow-[0_10px_28px_var(--shadow)]"
         >
-          Host a workshop
+          Request a workshop
+        </a>
+        <a
+          href={joinWorkshopUrl}
+          className="center-fill-button hidden rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/74 px-4 py-2 text-sm font-semibold text-[color:var(--text)] sm:inline-flex"
+        >
+          Join a public workshop
         </a>
       </nav>
     </header>
@@ -98,22 +104,32 @@ function Hero() {
         <p className="mt-6 max-w-xl text-lg leading-8 text-[color:var(--muted)]">
           Altrubyte helps mission-driven teams learn practical AI-assisted coding through live, hands-on workshops.
         </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <MotionAnchor
-            href={hostWorkshopUrl}
-            className="group inline-flex items-center justify-center gap-3 rounded-full bg-[color:var(--accent)] px-5 py-3 text-sm font-bold text-white shadow-[0_18px_50px_var(--ring)]"
-          >
-            Host a workshop
-            <span className="grid size-8 place-items-center rounded-full bg-white/18 transition duration-500 group-hover:translate-x-1">
-              ↗
-            </span>
-          </MotionAnchor>
-          <MotionAnchor
-            href={joinWorkshopUrl}
-            className="inline-flex items-center justify-center rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/76 px-5 py-3 text-sm font-bold text-[color:var(--text)]"
-          >
-            Join a workshop
-          </MotionAnchor>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-[1.4rem] bg-[color:var(--surface)]/68 p-2 shadow-[0_16px_60px_var(--shadow)]">
+            <MotionAnchor
+              href={hostWorkshopUrl}
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[color:var(--accent)] px-5 py-3 text-sm font-bold text-white shadow-[0_18px_50px_var(--ring)]"
+            >
+              Request a workshop
+              <span className="grid size-8 place-items-center rounded-full bg-white/18 transition duration-500 group-hover:translate-x-1">
+                ↗
+              </span>
+            </MotionAnchor>
+            <p className="px-3 pb-2 pt-4 text-sm leading-6 text-[color:var(--muted)]">
+              For organizations, schools, nonprofits, clubs, and youth groups that want a session for their team or community.
+            </p>
+          </div>
+          <div className="rounded-[1.4rem] bg-[color:var(--surface)]/68 p-2 shadow-[0_16px_60px_var(--shadow)]">
+            <MotionAnchor
+              href={joinWorkshopUrl}
+              className="center-fill-button inline-flex w-full items-center justify-center rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/76 px-5 py-3 text-sm font-bold text-[color:var(--text)]"
+            >
+              Join a public workshop
+            </MotionAnchor>
+            <p className="px-3 pb-2 pt-4 text-sm leading-6 text-[color:var(--muted)]">
+              For individuals who want to hear when future public AI-assisted coding workshops open.
+            </p>
+          </div>
         </div>
       </Reveal>
 
@@ -145,7 +161,7 @@ function WorkshopFormat() {
               Low lift for your team.
             </h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              You bring a workflow worth improving. Altrubyte brings the lesson plan, demo, and facilitation.
+              Bring a workflow, a recurring task, or a general AI training goal. Altrubyte shapes the workshop around your group&apos;s needs.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-5 md:justify-end">
@@ -172,7 +188,7 @@ function WhatWeTeach() {
           What your team learns
         </h2>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-          The workshop focuses on practical judgment: choosing useful problems, building small, and reviewing AI-generated code safely.
+          The workshop focuses on practical judgment: learning core AI-assisted coding skills, building small, and reviewing AI-generated code safely.
         </p>
       </Reveal>
       <div className="mt-12 grid gap-4 md:grid-cols-6">
@@ -205,7 +221,7 @@ function ProjectExamples() {
             Realistic workshop builds
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-8 text-[color:var(--muted)]">
-            These are sample projects we can adapt to the host organization&apos;s actual workflow.
+            These are sample projects we can adapt to a partner organization&apos;s goals when a workflow-specific demo makes sense.
           </p>
         </Reveal>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -258,7 +274,7 @@ function EarlyProof() {
             Getting started without pretending to have scale.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-            Altrubyte is currently looking for early host organizations. The goal is to make each first workshop useful, specific, and easy to repeat.
+            Altrubyte is currently looking for early partner organizations and public workshop interest. The goal is to make each first session useful, specific, and easy to repeat.
           </p>
         </div>
         <div className="rounded-[1.5rem] bg-[color:var(--accent-soft)] p-6">
@@ -266,7 +282,7 @@ function EarlyProof() {
             Early partner fit
           </p>
           <p className="mt-8 text-2xl font-semibold tracking-[-0.04em]">
-            A team with one manual workflow and 45 minutes to learn.
+            A team with one manual workflow, one training goal, or 45 minutes to learn.
           </p>
         </div>
       </Reveal>
@@ -278,39 +294,52 @@ function Contact() {
   return (
     <section id="contact" className="px-4 pb-10 pt-20 md:px-8 md:pb-14 md:pt-28">
       <Reveal className="mx-auto max-w-7xl rounded-[2rem] border border-[color:var(--ring)] bg-[color:var(--surface)]/80 p-6 shadow-[0_24px_90px_var(--shadow)] md:p-10">
-        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-end">
+        <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start">
           <div>
             <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
-              Bring Altrubyte to your organization.
+              Choose the right workshop path.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-              Tell us what kind of team you support and which workflows you want to improve.
+              Organizations can request a session for a team or community. Individuals can join the public workshop list.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <MotionAnchor
-              href={hostWorkshopUrl}
-              className="group inline-flex items-center justify-center gap-3 rounded-full bg-[color:var(--accent)] px-5 py-3 text-sm font-bold text-white"
-            >
-              Open host form
-              <span className="grid size-8 place-items-center rounded-full bg-white/18 transition duration-500 group-hover:translate-x-1">
-                ↗
-              </span>
-            </MotionAnchor>
-            <MotionAnchor
-              href={joinWorkshopUrl}
-              className="inline-flex items-center justify-center rounded-full border border-[color:var(--ring)] px-5 py-3 text-sm font-bold"
-            >
-              Open participant form
-            </MotionAnchor>
-            <a
-              href="mailto:altrubyte@gmail.com"
-              className="mt-3 text-center text-sm font-semibold text-[color:var(--muted)] transition hover:text-[color:var(--text)]"
-            >
-              altrubyte@gmail.com
-            </a>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[1.5rem] bg-[color:var(--surface-muted)] p-5">
+              <h3 className="text-xl font-semibold tracking-[-0.03em]">For organizations</h3>
+              <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
+                Request an AI workshop for your school, nonprofit, club, youth group, team, or community.
+              </p>
+              <MotionAnchor
+                href={hostWorkshopUrl}
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[color:var(--accent)] px-5 py-3 text-sm font-bold text-white"
+              >
+                Request a workshop
+              </MotionAnchor>
+            </div>
+            <div className="rounded-[1.5rem] bg-[color:var(--surface-muted)] p-5">
+              <h3 className="text-xl font-semibold tracking-[-0.03em]">For individuals</h3>
+              <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
+                Join the list to hear when future public AI-assisted coding workshops are open.
+              </p>
+              <MotionAnchor
+                href={joinWorkshopUrl}
+                className="center-fill-button mt-6 inline-flex w-full items-center justify-center rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)] px-5 py-3 text-sm font-bold text-[color:var(--text)]"
+              >
+                Join a public workshop
+              </MotionAnchor>
+            </div>
           </div>
         </div>
+        <p className="mt-8 border-t border-[color:var(--ring)] pt-6 text-center text-sm text-[color:var(--muted)]">
+          For any further inquiries, contact{" "}
+          <a
+            href="mailto:altrubyte@gmail.com"
+            className="font-semibold text-[color:var(--text)] transition hover:text-[color:var(--accent-strong)]"
+          >
+            altrubyte@gmail.com
+          </a>
+          .
+        </p>
       </Reveal>
     </section>
   );
