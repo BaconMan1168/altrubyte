@@ -59,11 +59,11 @@ export default function Home() {
 function Navigation() {
   return (
     <header className="fixed left-0 right-0 top-0 z-30 px-4 pt-4">
-      <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border border-[color:var(--ring)] bg-[color:var(--bg)]/82 px-4 shadow-[0_18px_70px_var(--shadow)] backdrop-blur-xl">
+      <nav className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-3 rounded-full border border-[color:var(--ring)] bg-[color:var(--bg)]/86 px-3 shadow-[0_18px_70px_var(--shadow)] backdrop-blur-xl sm:px-4">
         <a href="#" className="text-[15px] font-semibold tracking-[-0.02em]">
           Altrubyte
         </a>
-        <div className="hidden items-center gap-6 text-sm text-[color:var(--muted)] md:flex">
+        <div className="hidden items-center justify-center gap-7 text-sm text-[color:var(--muted)] lg:flex">
           <a className="transition hover:text-[color:var(--text)]" href="#format">
             Format
           </a>
@@ -74,18 +74,22 @@ function Navigation() {
             Contact
           </a>
         </div>
-        <a
-          href={hostWorkshopUrl}
-          className="center-fill-button rounded-full border border-transparent bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--text)] shadow-[0_10px_28px_var(--shadow)]"
-        >
-          Request a workshop
-        </a>
-        <a
-          href={joinWorkshopUrl}
-          className="center-fill-button hidden rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/74 px-4 py-2 text-sm font-semibold text-[color:var(--text)] sm:inline-flex"
-        >
-          Join a public workshop
-        </a>
+        <div className="flex items-center justify-end gap-1 rounded-full bg-[color:var(--surface)]/64 p-1 shadow-[0_10px_28px_var(--shadow)]">
+          <a
+            href={joinWorkshopUrl}
+            aria-label="Join a public workshop"
+            className="hidden rounded-full px-3 py-2 text-sm font-semibold text-[color:var(--muted)] transition duration-500 hover:text-[color:var(--text)] sm:inline-flex"
+          >
+            Public workshops
+          </a>
+          <a
+            href={hostWorkshopUrl}
+            aria-label="Request a workshop"
+            className="center-fill-button rounded-full border border-[color:var(--ring)] px-4 py-2 text-sm font-semibold text-[color:var(--text)]"
+          >
+            Request workshop
+          </a>
+        </div>
       </nav>
     </header>
   );

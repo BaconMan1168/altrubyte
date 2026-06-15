@@ -73,40 +73,25 @@ a {
 
 .center-fill-button {
   --fill: var(--accent);
+  --button-bg: var(--surface);
   position: relative;
-  isolation: isolate;
   overflow: hidden;
+  background:
+    radial-gradient(circle at center, var(--fill) 0 50%, transparent 52%) center / 0% 0%
+      no-repeat,
+    var(--button-bg);
   transition:
+    background-size 760ms cubic-bezier(0.16, 1, 0.3, 1),
     color 720ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 720ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.center-fill-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  background: var(--fill);
-  opacity: 0;
-  transform: scale(0.18);
-  transform-origin: center;
-  transition:
-    opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 .center-fill-button:hover,
 .center-fill-button:focus-visible {
+  background-size: 220% 220%, auto;
   color: var(--surface);
   border-color: transparent;
-}
-
-.center-fill-button:hover::before,
-.center-fill-button:focus-visible::before {
-  opacity: 1;
-  transform: scale(1);
 }
 
 .center-fill-button:focus-visible {
