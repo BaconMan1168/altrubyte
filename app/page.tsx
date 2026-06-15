@@ -112,10 +112,10 @@ function Hero() {
           <div className="rounded-[1.4rem] bg-[color:var(--surface)]/68 p-2 shadow-[0_16px_60px_var(--shadow)]">
             <MotionAnchor
               href={hostWorkshopUrl}
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[color:var(--accent)] px-5 py-3 text-sm font-bold text-white shadow-[0_18px_50px_var(--ring)]"
+              className="arrow-reveal-button group inline-flex w-full items-center justify-center overflow-hidden rounded-full bg-[color:var(--accent)] px-5 py-3 text-sm font-bold text-white shadow-[0_18px_50px_var(--ring)]"
             >
               Request a workshop
-              <span className="grid size-8 place-items-center rounded-full bg-white/18 transition duration-500 group-hover:translate-x-1">
+              <span className="arrow-chip grid h-8 shrink-0 place-items-center overflow-hidden rounded-full bg-white/18">
                 ↗
               </span>
             </MotionAnchor>

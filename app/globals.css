@@ -99,6 +99,33 @@ a {
   outline-offset: 3px;
 }
 
+.arrow-reveal-button {
+  transition:
+    padding 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 760ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow-reveal-button .arrow-chip {
+  width: 0;
+  margin-left: 0;
+  opacity: 0;
+  transform: translateX(-0.5rem) scale(0.72);
+  transition:
+    width 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    margin-left 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow-reveal-button:hover .arrow-chip,
+.arrow-reveal-button:focus-visible .arrow-chip {
+  width: 2rem;
+  margin-left: 0.75rem;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
 .grain {
   pointer-events: none;
   position: fixed;
