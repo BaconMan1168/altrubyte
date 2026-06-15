@@ -6,6 +6,9 @@ Guidance for coding agents working in this repository.
 
 This is the website for Altrubyte, a website for a vibe coding non profit which runs workshops for schools and organizations to teach them vibe coding and its applications
 
+## Design Principles
+
+- Use the taste-skill and high-end-visual-design skills when designing a frontend
 
 ## Working Principles
 
