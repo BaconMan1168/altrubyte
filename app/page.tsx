@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { MotionAnchor, Reveal } from "./components/reveal";
 
-const hostWorkshopUrl = "#replace-with-host-workshop-google-form";
-const joinWorkshopUrl = "#replace-with-join-workshop-google-form";
+const hostWorkshopUrl = "https://forms.gle/Vf4NGPxwYyHvw29s8";
+const joinWorkshopUrl = "https://forms.gle/94k6iVPZ2uBf8VVy5";
 
 const workshopFormat = [
   "Free sessions",
@@ -253,60 +253,49 @@ function WhatWeTeach() {
 
 function WorkshopPaths() {
   return (
-    <section id="workshops" className="px-4 py-20 md:px-8 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        <Reveal className="grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-end">
-          <div>
+    <section id="workshops" className="px-4 py-20 md:px-8 md:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-start">
+        <Reveal className="lg:sticky lg:top-32">
+          <div className="max-w-2xl">
             <p className="mb-5 inline-flex rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)]/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--accent-strong)]">
               Workshop paths
             </p>
-            <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
               Pick the AI workshop format around the work in front of you.
             </h2>
+            <p className="mt-6 text-lg leading-8 text-[color:var(--muted)]">
+              Altrubyte workshops help nonprofits, schools, clubs, and youth
+              organizations learn AI-assisted coding, workflow automation, prompt
+              design, and responsible coding-agent review through practical sessions.
+            </p>
           </div>
-          <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-            Altrubyte workshops help nonprofits, schools, clubs, and youth organizations
-            learn AI-assisted coding, workflow automation, prompt design, and responsible
-            coding-agent review through practical sessions.
-          </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-12 md:gap-5">
-          {workshopPaths.map((path, index) => (
-            <Reveal
-              key={path.title}
-              delay={index * 0.05}
-              className={[
-                "group",
-                index % 2 === 0 ? "md:col-span-7" : "md:col-span-5",
-              ].join(" ")}
-            >
-              <article className="h-full rounded-[2rem] border border-[color:var(--ring)] bg-[color:var(--surface)]/68 p-2 shadow-[0_24px_90px_var(--shadow)] transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
-                <div className="grid h-full gap-5 rounded-[calc(2rem-0.5rem)] bg-[color:var(--surface-muted)] p-5 md:grid-cols-[auto_1fr] md:p-6">
-                  <div className="flex md:block">
-                    <span className="grid h-12 w-12 place-items-center rounded-full bg-[color:var(--text)] font-mono text-sm font-semibold text-[color:var(--surface)]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-start justify-between gap-4">
-                      <h3 className="max-w-xl text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                        {path.title}
-                      </h3>
-                      <span className="rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)] px-3 py-2 text-xs font-semibold text-[color:var(--accent-strong)]">
+        <div>
+          <div className="grid gap-4">
+            {workshopPaths.map((path, index) => (
+              <Reveal key={path.title} delay={index * 0.05} className="group">
+                <article className="rounded-[2rem] border border-[color:var(--ring)] bg-[color:var(--surface)]/68 p-2 shadow-[0_24px_90px_var(--shadow)] transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
+                  <div className="rounded-[calc(2rem-0.5rem)] bg-[color:var(--surface-muted)] p-5 md:p-6">
+                    <div className="grid gap-5 md:grid-cols-[auto_1fr_auto] md:items-start">
+                      <span className="grid h-12 w-12 place-items-center rounded-full bg-[color:var(--text)] font-mono text-sm font-semibold text-[color:var(--surface)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 className="max-w-2xl text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
+                          {path.title}
+                        </h3>
+                        <p className="mt-3 max-w-2xl text-sm font-semibold leading-6 text-[color:var(--accent-strong)]">
+                          Best for: {path.bestFor}
+                        </p>
+                      </div>
+                      <span className="w-fit rounded-full border border-[color:var(--ring)] bg-[color:var(--surface)] px-3 py-2 text-xs font-semibold text-[color:var(--accent-strong)]">
                         {path.length}
                       </span>
                     </div>
-                    <dl className="mt-8 grid gap-5 sm:grid-cols-3">
-                      <div>
-                        <dt className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--accent-strong)]">
-                          Best for
-                        </dt>
-                        <dd className="mt-2 text-sm leading-6 text-[color:var(--muted)]">
-                          {path.bestFor}
-                        </dd>
-                      </div>
-                      <div>
+
+                    <dl className="mt-6 grid gap-3 md:grid-cols-2">
+                      <div className="rounded-[1.25rem] bg-[color:var(--surface)]/72 p-4">
                         <dt className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--accent-strong)]">
                           Goal
                         </dt>
@@ -314,7 +303,7 @@ function WorkshopPaths() {
                           {path.goal}
                         </dd>
                       </div>
-                      <div>
+                      <div className="rounded-[1.25rem] bg-[color:var(--surface)]/72 p-4">
                         <dt className="font-mono text-xs uppercase tracking-[0.14em] text-[color:var(--accent-strong)]">
                           Output
                         </dt>
@@ -324,33 +313,36 @@ function WorkshopPaths() {
                       </div>
                     </dl>
                   </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={0.18} className="mt-6">
-          <div className="rounded-[2rem] bg-[color:var(--text)] p-2 text-[color:var(--surface)] shadow-[0_24px_90px_var(--shadow)]">
-            <div className="grid gap-5 rounded-[calc(2rem-0.5rem)] border border-white/10 p-5 md:grid-cols-[1fr_auto] md:items-center md:p-6">
-              <p className="max-w-3xl text-base leading-7 text-[color:var(--surface-muted)]">
-                Not sure which format fits? Request a workshop and choose
-                <span className="font-semibold text-white"> Not sure / help me choose</span>.
-                The session can be shaped around a training goal, a manual workflow, or one
-                tool idea.
-              </p>
-              <MotionAnchor
-                href={hostWorkshopUrl}
-                className="arrow-reveal-button group inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-[color:var(--accent)] px-6 text-sm font-bold text-white"
-              >
-                <span className="button-label">Request a workshop</span>
-                <span className="arrow-chip grid h-8 shrink-0 place-items-center overflow-hidden rounded-full bg-white/18">
-                  ↗
-                </span>
-              </MotionAnchor>
-            </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
+
+          <Reveal delay={0.18} className="mt-5">
+            <div className="rounded-[2rem] bg-[color:var(--surface)]/76 p-2 shadow-[0_24px_90px_var(--shadow)]">
+              <div className="grid gap-5 rounded-[calc(2rem-0.5rem)] bg-[color:var(--surface-muted)] p-5 md:grid-cols-[1fr_auto] md:items-center md:p-6">
+                <p className="max-w-3xl text-base leading-7 text-[color:var(--text)]">
+                  Not sure which format fits? Request a workshop and choose
+                  <span className="font-bold text-[color:var(--text)] underline decoration-[color:var(--accent)] decoration-2 underline-offset-4">
+                    {" "}
+                    Not sure / help me choose
+                  </span>
+                  . The session can be shaped around a training goal, a manual workflow, or
+                  one tool idea.
+                </p>
+                <MotionAnchor
+                  href={hostWorkshopUrl}
+                  className="arrow-reveal-button group inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-[color:var(--accent)] px-6 text-sm font-bold text-white"
+                >
+                  <span className="button-label">Request a workshop</span>
+                  <span className="arrow-chip grid h-8 shrink-0 place-items-center overflow-hidden rounded-full bg-white/18">
+                    ↗
+                  </span>
+                </MotionAnchor>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
